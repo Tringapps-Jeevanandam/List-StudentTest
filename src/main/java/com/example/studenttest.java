@@ -39,7 +39,7 @@ class STUDENT {
     }
 }
 
-public class STUDENTTEST {
+public class studenttest {
     public static final Logger Log = Logger.getLogger("InfoLogging");
 
     public static void main(String[] args) {
@@ -48,10 +48,10 @@ public class STUDENTTEST {
         double gpa;
         List<STUDENT> studentList = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        System.out.println("How many student details you want to enter:");
+        Log.info("How many student details you want to enter:");
         int x = sc.nextInt();
         for(int i = 0;i<x;i++){
-            System.out.println("Enter Student Name, Age, GPA");
+            Log.info("Enter Student Name, Age, GPA");
             name = sc.next();
             age = sc.nextInt();
             gpa = sc.nextDouble();
