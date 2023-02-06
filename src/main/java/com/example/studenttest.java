@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.logging.Logger;
@@ -42,11 +43,21 @@ public class STUDENTTEST {
     public static final Logger Log = Logger.getLogger("InfoLogging");
 
     public static void main(String[] args) {
+        String name;
+        int age;
+        double gpa;
         List<STUDENT> studentList = new ArrayList<>();
-        studentList.add(new STUDENT("Jeeva", 20, 8.5));
-        studentList.add(new STUDENT("Pradeep", 21, 8.8));
-        studentList.add(new STUDENT("Bala", 22, 9.2));
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many student details you want to enter:");
+        int x = sc.nextInt();
+        for(int i = 0;i<x;i++){
+            System.out.println("Enter Student Name, Age, GPA");
+            name = sc.next();
+            age = sc.nextInt();
+            gpa = sc.nextDouble();
+            studentList.add(new STUDENT(name,age,gpa));
+        }
+        sc.close();
         for(STUDENT student:studentList){
             Log.info("Name: " + student.getName());
             Log.info("Age: " + student.getAge());
